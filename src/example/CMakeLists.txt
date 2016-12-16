@@ -9,7 +9,7 @@ FILE(GLOB SOURCEFILES *.cpp *.c)
 message( ${SOURCEFILES} )
 
 #set path to library
-link_directories(/usr/lib/x86_64-linux-gnu ../library/)
+link_directories(../library/)
 
 #Put the binary in the right location
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
@@ -19,4 +19,4 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 ADD_EXECUTABLE(estimateLocationFromQRCode ${SOURCEFILES})
 
 #link libraries to executable
-target_link_libraries(estimateLocationFromQRCode  QRCodeStateEstimation)
+target_link_libraries(estimateLocationFromQRCode  QRCodeStateEstimation opencv_videoio)
